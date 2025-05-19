@@ -1,25 +1,25 @@
 
-kind: pod
-apiVersion: v1
-metadata:
-  name: nginx
-  namespace: expense  
-spec:
-  # one pod can hove 1 or more containers
-  containers:
-  - name: nginx
-    image: nginx
-
-
-
-# kind: Pod
+# kind: pod
 # apiVersion: v1
 # metadata:
 #   name: nginx
-#   namespace: expense
+#   namespace: expense  
 # spec:
-#   # one pod can contain multiple containers
+#   # one pod can hove 1 or more containers
 #   containers:
 #   - name: nginx
 #     image: nginx
+
+
+
+kind: Pod
+apiVersion: v1
+metadata:
+  name: nginx
+  namespace: expense
+spec:
+  # one pod can contain multiple containers
+  containers:
+  - name: nginx
+    image: nginx
     
