@@ -1,0 +1,10 @@
+kind: pod
+apiVersion: v1
+metadata:
+  name: nginx
+spec:
+# one pod can hove 1 or more containers
+  containers:
+  - name: nginx
+    image: nginx
+    
