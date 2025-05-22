@@ -6,13 +6,32 @@ spec:
   containers:
   - name: nginx
     image: nginx
-    #soft limit -- minimum
+      #soft limit -- minimum
     resources:
-      requets:
+      requests:
         memory: "64Mi"
         cpu: "100m"
-    # hard limit -- maximum
+      # hard limit -- maximum
       limits:
         memory: "128Mi"
         cpu: "200m"
+
+
+# kind: Pod
+# apiVersion: v1
+# metadata:
+#   name: resources
+# spec:
+#   containers:
+#   - name: nginx
+#     image: nginx
+#     resources:
+#       # soft limit
+#       requests:
+#         memory: "68Mi"
+#         cpu: "100m"
+#       # hard limit
+#       limits:
+#         memory: "128Mi"
+#         cpu: "150m"
 
