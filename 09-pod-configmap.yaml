@@ -1,7 +1,7 @@
 kind: Pod
 apiVersion: v1
 metadata:
-  name: podconfigmap
+  name: myconfigmap
 spec:
   containers:
   - name: nginx
@@ -9,3 +9,15 @@ spec:
     envFrom:
     - configMapRef:
       name: myconfigmap
+
+# kind: Pod
+# apiVersion: v1
+# metadata:
+#   name: pod-config
+# spec:
+#   containers:
+#   - name: nginx
+#     image: nginx
+#     envFrom:
+#     - configMapRef:
+#         name: myconfig
