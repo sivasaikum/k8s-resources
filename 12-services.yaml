@@ -1,7 +1,7 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: Service
+  name: nginx
 spec:
   selector: # here labels used as a selectors , to attach service to a particular pod.
     project: expense
@@ -12,7 +12,7 @@ spec:
   - protocol: TCP
     port: 80 # service port
     targetPort: 80
-
+-------
 
 kind: Pod
 apiVersion: v1
