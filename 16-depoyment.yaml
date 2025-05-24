@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: node
-        image: sivasaikumar943/deployment:1.0.0
+        image: sivasaikumar943/deployment:2.0.0
         ports:
         - containerPort: 80
 
