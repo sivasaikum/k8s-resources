@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: node
-        image: nginx:latest
+        image: nginx:stable-bookworm-perl
         ports:
         - containerPort: 80
 
