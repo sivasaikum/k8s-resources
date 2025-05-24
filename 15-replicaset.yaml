@@ -12,7 +12,7 @@ spec:
     matchLabels:
       component: frontend
       environment: dev
-
+  # pod template
   template:
     metadata:
     # replicaset use these labels to find the pods for creating desired number of replicas
@@ -22,5 +22,5 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx
+        image: nginx:stable-perl
 
