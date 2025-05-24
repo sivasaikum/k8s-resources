@@ -24,3 +24,20 @@ spec:
         image: nginx:latest
         ports:
         - containerPort: 80
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: nginx-lb
+spec:
+  type: LoadBalancer
+  selector:
+    component: backend
+    environment: prod
+  ports:
+  - protocol: TCP
+    port: 80 # service port
+    targetPort: 80
+    nodePort: 30007
+    
