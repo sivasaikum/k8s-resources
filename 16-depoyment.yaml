@@ -21,4 +21,4 @@ spec:
     spec:
       containers:
       - name: node
-        image: node:latest
+        image: nginx
