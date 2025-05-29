@@ -67,6 +67,7 @@ spec:
   clusterIP: None
   selector:
     app: nginx
+    demo: stateful
 ---
 apiVersion: apps/v1
 kind: StatefulSet
