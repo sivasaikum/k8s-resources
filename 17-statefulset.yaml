@@ -53,35 +53,32 @@
 #         requests:
 #           storage: 2Gi
 
-# apiVersion: v1
-# kind: Service
-# metadata:
-#   name: nginx-headless
-#   labels:
-#     app: nginx
-#     demo: statefulset
-# spec:
-#   ports:
-#   - port: 80
-#     name: web
-#   clusterIP: None
-#   selector:
-#     app: nginx
-#     demo: statefulset
-
-
-kind: Service
 apiVersion: v1
+kind: Service
 metadata:
-  name: nginx
+  name: nginx-headless
 spec:
-  selector: # here labels used as a selectors , to attach service to a particular pod.
-    app: nginx
-    demo: statefulset
   ports:
   - port: 80
     name: web
   clusterIP: None
+  selector:
+    app: nginx
+    demo: statefulset
+
+
+# kind: Service
+# apiVersion: v1
+# metadata:
+#   name: nginx
+# spec:
+#   selector: # here labels used as a selectors , to attach service to a particular pod.
+#     app: nginx
+#     demo: statefulset
+#   ports:
+#   - port: 80
+#     name: web
+#   clusterIP: None
 ---
 apiVersion: apps/v1
 kind: StatefulSet
