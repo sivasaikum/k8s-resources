@@ -20,8 +20,8 @@ spec:
         environment: prod
     spec:
       containers:
-      - name: node
-        image: sivasaikumar943/deployment:2.0.0
+      - name: nginx
+        image: nginx
         ports:
         - containerPort: 80
 
