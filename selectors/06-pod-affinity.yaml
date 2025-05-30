@@ -13,12 +13,12 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: pd-affinity
+  name: pod-affinity
   labels:
     purpose: "pod-affinity-demo"
 spec:
   affinity:
-    podeAffinity:
+    podAffinity:
       requiredDuringSchedulingIgnoredDuringExecution:
       - labelSelector:
           matchExpressions:
