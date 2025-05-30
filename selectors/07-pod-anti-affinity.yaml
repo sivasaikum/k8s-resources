@@ -30,4 +30,9 @@ spec:
   containers:
   - name: nginx
     image: nginx
+  tolerations:
+  - key: "user"
+    operator: "Equal"
+    value: "admin"
+    effect: "NoSchedule"
   
