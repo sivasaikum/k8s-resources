@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-1
+  labels:
+    app-name: pod-1
+spec:
+  containers:
+  - name: with-pod-affinity
+    image: registry.k8s.io/pause:3.8
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-affinity
+  labels:
+    purpose: "pod-affinity-demo"
+spec:
+  affinity:
+    podAntiAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+      - labelSelector:
+          matchExpressions:
+          - key: app-name
+            operator: In
+            values:
+            - pod-1
+        topologyKey: topology.kubernetes.io/zone
+  containers:
+  - name: nginx
+    image: nginx
+  
