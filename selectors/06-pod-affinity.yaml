@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-1
+  labels:
+    app-name: pod-1
+spec:
+  containers:
+  - name: with-pod-affinity
+    image: registry.k8s.io/pause:3.8
+
+---
+# apiVersion: v1
+# kind: Pod
+# metadata:
+#   name: affinity
+#   labels:
+#     purpose: "affinity-demo"
+# spec:
+#   affinity:
+#     nodeAffinity:
+#       requiredDuringSchedulingIgnoredDuringExecution:
+#         nodeSelectorTerms:
+#         - matchExpressions:
+#           - key: user
+#             operator: In
+#             values:
+#             - admin
+#   containers:
+#   - name: nginx
+#     image: nginx
+  
