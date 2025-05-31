@@ -3,7 +3,7 @@
 ## Permissions
 REG_CODE=us-east-1
 CLUSTER_NAME=expense
-ACC_ID=344060441143
+ACC_ID=AWS Account ID
 
 ```
 eksctl utils associate-iam-oidc-provider \
