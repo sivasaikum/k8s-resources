@@ -24,7 +24,7 @@ aws iam create-policy \
 
 '''
 
-'''
+```
 eksctl create iamserviceaccount \
 --cluster=$CLUSTER_NAME \
 --namespace=kube-system \
@@ -34,7 +34,7 @@ eksctl create iamserviceaccount \
 --region $REG_CODE \
 --approve
 
-'''
+```
 
 ## Install Drivers
 
