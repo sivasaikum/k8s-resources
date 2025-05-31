@@ -49,7 +49,7 @@ metadata:
 spec:
   ingressClassName: alb
   rules:
-  - host: "app1.jobsearcindia.online"
+  - host: "app1.jobsearchindia.online"
     http:
       paths:
       - pathType: Prefix
