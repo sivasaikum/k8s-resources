@@ -1,0 +1,24 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: nginx
+  namespace: expense
+spec:
+  serviceAccount: expense-mysql-secret
+  initContainers:
+  - name: aws-cli
+    image: amazon/aws-cli:2.7.9
+    command: ['sh', '-c', 'aws secretsmanager get-secret-value --secret-id mysql/expense/secrets --query SecretString --output text > /secret/.env']
+    volumeMounts:
+    - mountPath: /secrets
+      name: secret-volume
+  # one pod can contain multiple containers
+  containers:
+  - name: nginx
+    image: nginx
+    volumeMounts:
+    - mountPath: /secrets
+      name: secret-volume
+  volumes:
+  - name: secret-volume
+    emptyDir: {}
