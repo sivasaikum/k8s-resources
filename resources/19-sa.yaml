@@ -7,7 +7,7 @@ spec:
   serviceAccount: expense-mysql-secret
   initContainers:
   - name: aws-cli
-    image: amazon/aws-cli:2.7.9
+    image: amazon/aws-cli
     command: ['sh', '-c', 'aws secretsmanager get-secret-value --secret-id mysql/expense/secrets --query SecretString --output text > /secret/.env']
     volumeMounts:
     - mountPath: /secrets
