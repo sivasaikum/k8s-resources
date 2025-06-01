@@ -1,14 +1,14 @@
 kind: Pod
 apiVersion: v1
 metadata:
-  name: nginx
+  name: sa-demo
   namespace: expense
 spec:
   serviceAccount: expense-mysql-secret
   initContainers:
   - name: aws-cli
     image: amazon/aws-cli
-    command: ['sh', '-c', 'aws secretsmanager get-secret-value --secret-id mysql/expense/secrets --query SecretString --output text > /secret/.env']
+    command: ['sh', '-c', 'aws secretsmanager get-secret-value --secret-id mysql/expense/secrets --query SecretString --output text > /secret/.env ']
     volumeMounts:
     - mountPath: /secrets
       name: secret-volume
